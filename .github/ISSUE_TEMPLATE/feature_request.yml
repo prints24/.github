@@ -1,0 +1,49 @@
+name: ✨ Feature Request
+description: Propose a new feature, platform enhancement, or workflow optimization for Super91
+title: "[Feature]: "
+labels: ["type: feature", "status: backlog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve the Super91 platform? Provide details below to help us evaluate and prioritize it.
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Target Subsystem
+      description: Which area of the platform does this proposal benefit?
+      options:
+        - "Central Prepress (DCP)"
+        - "Logistics & Delivery Franchises (DF)"
+        - "Storefront & PDP"
+        - "Production Hubs (NPH / CPH)"
+        - "Admin & Operations"
+        - "Infrastructure & Performance"
+    validations:
+      required: true
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement / Context
+      description: What challenge or inefficiency does this feature address?
+      placeholder: "e.g., Franchise operators currently have to manually re-enter box counts..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution & User Story
+      description: Describe your proposed solution from the user's perspective.
+      placeholder: "As a [role], I want to [action] so that [benefit]..."
+    validations:
+      required: true
+  - type: textarea
+    id: floor-ux-impact
+    attributes:
+      label: Operational & Floor UX Impact
+      description: How does this change affect floor operators, print designers, or delivery staff in real-world scenarios?
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions, manual workarounds, or prior approaches considered?
