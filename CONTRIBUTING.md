@@ -29,11 +29,11 @@ To keep releases predictable and clean across our production hubs and customer s
 
 | Branch | Purpose | Deployment Target |
 |---|---|---|
-| `main` | Production-ready, stable codebase | Production (`super91.com`) |
-| `v1.1` / `staging` | Staging, regression testing, and integration verification | Staging environment |
-| `feat/<issue#>-<short-description>` | New feature development | Local / Preview |
-| `fix/<issue#>-<short-description>` | Bug fixes and patches | Local / Preview |
-| `hotfix/<issue#>-<short-description>` | Urgent production incident fixes | Hotfix Staging ➔ `main` |
+| `v1.1` | **Primary Active Branch** (Current production codebase & development baseline) | Production (`super91.com`) / Active |
+| `feat/<issue#>-<short-description>` | New feature development branched from `v1.1` | Local / Preview |
+| `fix/<issue#>-<short-description>` | Bug fixes and operational patches targeting `v1.1` | Local / Preview |
+| `hotfix/<issue#>-<short-description>` | Urgent production incident fixes targeting `v1.1` | Hotfix ➔ `v1.1` |
+| `main` | *Legacy / Inactive* (Not currently in active use; preserved for reference) | Inactive |
 
 ### Branch Naming Examples:
 * `feat/466-dcp-single-user-lock`
@@ -79,8 +79,8 @@ We strictly follow the [Conventional Commits](https://www.conventionalcommits.or
 
 2. **Develop on a Feature Branch:**
    ```bash
-   git checkout main
-   git pull origin main
+   git checkout v1.1
+   git pull origin v1.1
    git checkout -b feat/466-dcp-single-user-lock
    ```
 
@@ -91,7 +91,7 @@ We strictly follow the [Conventional Commits](https://www.conventionalcommits.or
 
 4. **Submit a Pull Request:**
    * Push your branch to GitHub: `git push -u origin feat/...`
-   * Open a PR targeting `main` (or `v1.1`).
+   * Open a PR targeting `v1.1`.
    * Complete the [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md):
      * Reference the issue (`Fixes #466`).
      * Attach screenshots or screen recordings for UI changes.
