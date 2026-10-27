@@ -10,9 +10,9 @@ We actively provide security updates and patches for the following versions:
 
 | Version / Branch | Supported | Notes |
 |---|---|---|
-| `main` | :white_check_mark: Yes | Current production release (`super91.com`) |
-| `v1.1` | :white_check_mark: Yes | Current staging & pre-release branch |
-| Older releases | :x: No | Please upgrade to the latest production release |
+| `v1.1` | :white_check_mark: Yes | Primary active production release (`super91.com`) |
+| `main` | :x: No | Legacy / Inactive branch (not in active use) |
+| Older releases | :x: No | Please upgrade to the latest active release (`v1.1`) |
 
 ---
 
