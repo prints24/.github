@@ -1,0 +1,75 @@
+name: 🐛 Bug Report
+description: Report an issue, defect, or unexpected behavior in the Super91 platform
+title: "[Bug]: "
+labels: ["type: bug", "status: backlog"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please fill in the details below to help the engineering team diagnose and fix the issue quickly.
+  - type: dropdown
+    id: subsystem
+    attributes:
+      label: Subsystem / Area Affected
+      description: Select the primary module where the bug is occurring.
+      options:
+        - "Central Prepress (DCP Queue / Single-User Lock / Artwork Check)"
+        - "Logistics & Franchise (Barcode Scanning / Rack Routing / OTP Handover)"
+        - "Storefront & PDP (Catalog / Multi-Attribute Pricing / File Upload)"
+        - "Hub Operations (NPH / CPH Jobsheets / Stage Tracking)"
+        - "Admin & PMS (Site Settings / Financial Reports / User Permissions)"
+        - "Backend API & Database"
+        - "Other"
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity / Priority
+      description: Assess the operational impact of this bug.
+      options:
+        - "P0 - Blocker / Production Outage (Data loss, payment failure, core process halted)"
+        - "P1 - High (Workaround difficult, major hub or storefront impediment)"
+        - "P2 - Medium (Normal bug, workflow impaired but workaround exists)"
+        - "P3 - Low (Minor defect, UI alignment, cosmetic typo)"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Where was this issue observed?
+      placeholder: "e.g., Production (super91.com), Staging (v1.1), Local Dev, Mobile Scanner Device"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to Reproduce
+      description: Describe the exact steps taken to trigger the bug.
+      placeholder: |
+        1. Navigate to ...
+        2. Click on ...
+        3. Enter sample order #...
+        4. See error ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should have happened?
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior & Error Details
+      description: What actually happened? Include error messages or console stack traces.
+    validations:
+      required: true
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or Logs
+      description: Drag and drop relevant screenshots, screen recordings, or error logs here.
