@@ -1,0 +1,41 @@
+name: 🚨 Urgent Hotfix Request
+description: Escalation template for active production outages or mission-critical blockers
+title: "[HOTFIX]: "
+labels: ["type: hotfix", "priority: P0-critical", "status: in-progress"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **WARNING:** Use this template ONLY for live production incidents, critical revenue impact, or active hub outages.
+  - type: dropdown
+    id: incident-severity
+    attributes:
+      label: Production Impact Level
+      options:
+        - "P0 - Platform Down / Complete Hub Outage"
+        - "P0 - Payment / Order Checkout Failure"
+        - "P0 - Prepress Queue Locking Deadlock"
+        - "P1 - Workaround Required Immediately"
+    validations:
+      required: true
+  - type: textarea
+    id: incident-summary
+    attributes:
+      label: Incident Summary
+      description: Concise summary of what is broken in production right now.
+    validations:
+      required: true
+  - type: textarea
+    id: immediate-mitigation
+    attributes:
+      label: Immediate Mitigation / Patch Details
+      description: What is the proposed code fix, revert, or manual mitigation?
+    validations:
+      required: true
+  - type: input
+    id: pr-branch
+    attributes:
+      label: Hotfix Branch / PR Link
+      placeholder: "e.g., hotfix/471-fix-order-claim-deadlock"
+    validations:
+      required: true
