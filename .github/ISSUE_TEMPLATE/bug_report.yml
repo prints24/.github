@@ -39,7 +39,7 @@ body:
     attributes:
       label: Environment
       description: Where was this issue observed?
-      placeholder: "e.g., Production (super91.com), Staging (v1.1), Local Dev, Mobile Scanner Device"
+      placeholder: "e.g., Production (super91.com - v1.1), Local Dev, Mobile Scanner Device"
     validations:
       required: true
   - type: textarea
